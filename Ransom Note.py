@@ -1,0 +1,9 @@
+from collections import Counter
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        count=Counter(ransomNote)
+        
+        for k,v in count.items():
+            if magazine.count(k)<v:
+                return 0
+        return 1
